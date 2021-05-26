@@ -22,6 +22,7 @@ class AlunoAdmin(admin.ModelAdmin):
     search_fields = ['nome', 'numero','bairro']
     
 admin.site.register(Aluno, AlunoAdmin)
+
 # Turma
 
 class TurmaAdmin(admin.ModelAdmin):
