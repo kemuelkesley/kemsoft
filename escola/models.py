@@ -155,4 +155,5 @@ class ItemBiblioteca(models.Model):
         on_delete=models.DO_NOTHING,        
     )
 
-   # ola eu sou goku.
+   # ola eu sou goku. 
+   # vamos trabalhar.
