@@ -10,7 +10,7 @@ from . models import (
     Autor,
 )
 
-# Deixar os nomes dos alunos por ordem alfabetica.
+
 
 class AlunoInline(admin.TabularInline):
     model = Aluno
@@ -18,8 +18,8 @@ class AlunoInline(admin.TabularInline):
 
 class AlunoAdmin(admin.ModelAdmin):
     list_display = ('nome','Turma','email')
-    ordering = ['nome']
-    search_fields = ['nome', 'numero','bairro']
+    ordering = ['nome'] # Deixar os nomes dos alunos por ordem alfabetica.
+    search_fields = ['nome', 'numero','bairro'] # 
     
 admin.site.register(Aluno, AlunoAdmin)
 
