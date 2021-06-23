@@ -120,3 +120,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+JAZZMIN_SETTINGS = {
+    
+    # Tela dando boas vindas e colocando a mensagem que desejar.
+    "welcome_sign": "Bem vindo a KemSoft",
+    
+    # Tela de boas vindas do Django
+    "site_header": "Administração KemSof",
+
+    # Tela do rodapé da aplicação informando o copyrigth.
+    "copyright": "KemSoft Ltd",
+}
