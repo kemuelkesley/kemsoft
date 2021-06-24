@@ -121,8 +121,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+
+# Usando Jazzmin
+
 JAZZMIN_SETTINGS = {
     
+    "site_logo": "book/img/logo.png",
+   
     # Tela dando boas vindas e colocando a mensagem que desejar.
     "welcome_sign": "Bem vindo a KemSoft",
     
@@ -131,4 +137,50 @@ JAZZMIN_SETTINGS = {
 
     # Tela do rodapé da aplicação informando o copyrigth.
     "copyright": "KemSoft Ltd",
+
+
+    # Testando Menus
+
+    "topmenu_links": [        
+
+        # external url that opens in a new window (Permissions can be added)
+        {"name": "Suporte", "url": "https://www.myia.com.br/contactus", "new_window": True},       
+    ],
+
+    
+    "show_sidebar": True,
+    "navigation_expanded": True,
+    
+    # Não sei oque faz ainda.
+    "changeform_format": "horizontal_tabs",
+    
+    
+    # Deixar o Menu do Admin/usuario vertical ou horizontal
+    "changeform_format_overrides": {"auth.user": "vertical_tabs", "auth.group": "vertical_tabs"},
+    
+
+    # Colocar Menu no canto superior direito para o usuario.
+    "usermenu_links": [
+        {"name": "Suporte Contato", "url": "https://www.myia.com.br/contactus", "new_window": True},
+        {"name": "instagram", "url": "https://www.instagram.com/kemuelkesley/", "new_window": True},
+        {"model": "auth.user"}
+         
+    ],
+
+    # Mudando icones do lado esquerdo
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        
+    },
+
+
+}
+
+# Tema usado Simplex, mais pode acrescentar vários TEMAS.
+
+JAZZMIN_UI_TWEAKS = {
+    
+    "theme": "simplex",
 }
