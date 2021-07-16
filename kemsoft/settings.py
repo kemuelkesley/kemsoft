@@ -121,22 +121,24 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGOUT_REDIRECT_URL = 'index'
+
 
 
 # Usando Jazzmin
 
 JAZZMIN_SETTINGS = {
     
-    "site_logo": "book/img/logo.png",
+   
    
     # Tela dando boas vindas e colocando a mensagem que desejar.
-    "welcome_sign": "Bem vindo a KemSoft",
+    "welcome_sign": "Bem vindo a KemSoftware",
     
     # Tela de boas vindas do Django
-    "site_header": "Administração KemSof",
+    "site_header": "KemSofware",
 
     # Tela do rodapé da aplicação informando o copyrigth.
-    "copyright": "KemSoft Ltd",
+    "copyright": "KemSoftware Ltd",
 
 
     # Testando Menus
@@ -161,10 +163,10 @@ JAZZMIN_SETTINGS = {
 
     # Colocar Menu no canto superior direito para o usuario.
     "usermenu_links": [
+        {"model": "auth.user"},
         {"name": "Suporte Contato", "url": "https://www.myia.com.br/contactus", "new_window": True},
-        {"name": "instagram", "url": "https://www.instagram.com/kemuelkesley/", "new_window": True},
-        {"model": "auth.user"}
-         
+        {"name": "Instagram", "url": "https://www.instagram.com/myia_br/", "new_window": True},
+        #{"model": "auth.user"},       
     ],
 
     # Mudando icones do lado esquerdo
