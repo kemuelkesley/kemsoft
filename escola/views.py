@@ -6,7 +6,7 @@ from django.shortcuts import render
 def index(request):
 
     context = {
-        'welcome' : 'Welcome KemSoftware',
+        'welcome' : 'Welcome to KemSoftware',
         'begin' : 'Starting my first page By Kemuel Kesley'
     }
 
