@@ -154,7 +154,8 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [        
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Suporte", "url": "https://www.myia.com.br/contactus", "new_window": True},       
+        #{"name": "Suporte", "url": "Whatsapp 82 98851-6305", "new_window": True},      
+         {"name": "Contact/Whatsapp 82 98851-6305", "url": "", "new_window": True},  
     ],
 
     
@@ -172,8 +173,8 @@ JAZZMIN_SETTINGS = {
     # Colocar Menu no canto superior direito para o usuario.
     "usermenu_links": [
         {"model": "auth.user"},
-        {"name": "Suporte Contato", "url": "https://www.myia.com.br/contactus", "new_window": True},
-        {"name": "Instagram", "url": "https://www.instagram.com/myia_br/", "new_window": True},
+        {"name": "Suporte Contato", "url": "https://www.instagram.com/kemuelkesley/", "new_window": True},
+        {"name": "Github", "url": "https://github.com/kemuelkesley", "new_window": True},
         #{"model": "auth.user"},       
     ],
 
