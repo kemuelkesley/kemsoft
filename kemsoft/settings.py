@@ -29,7 +29,7 @@ SECRET_KEY = 'm$@ei6!t1x(0(11*vmxq&w3nb12=xv&ynki7h-jqb%ew^o1qez'
 # DEBUG com valor False = modo produção
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # https://kemsoft-kem.herokuapp.com/
 
 
 # Application definition
