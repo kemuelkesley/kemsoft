@@ -27,7 +27,7 @@ SECRET_KEY = 'm$@ei6!t1x(0(11*vmxq&w3nb12=xv&ynki7h-jqb%ew^o1qez'
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG com valor True = modo desenvolvimento
 # DEBUG com valor False = modo produção
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
