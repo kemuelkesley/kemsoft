@@ -176,7 +176,7 @@ JAZZMIN_SETTINGS = {
         "auth.Group": "fas fa-users",
         
     },
-
+    
 
 }
 
@@ -184,5 +184,11 @@ JAZZMIN_SETTINGS = {
 
 JAZZMIN_UI_TWEAKS = {
     
-    "theme": "simplex",
+    #"theme": "simplex",
+    #"dark_mode_theme": "darkly",
+    "theme":"lumen",
 }
+
+# Ativar os botões de edição no canto superior direito da tela.
+
+JAZZMIN_SETTINGS["show_ui_builder"] = True
