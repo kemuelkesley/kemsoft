@@ -1,27 +1,25 @@
-{% load static %}
+{% load bootstrap4 %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang='pt-br'>
 <head>
     <meta charset="UTF-8">
-    <title>Django Contato</title>
-    <link rel="stylesheet" href="{% static 'css/stylecontato.css' %}">
+    <title>Contato</title>
+    {% bootstrap_css %}
 </head>    
 <body>
-    
-    <center>
-    <h1>Page Django Contact</h1>
-        
-    <p style="color: brown;">Let's Begin</p>
-        
-        <h2>Contact Number</h2>
-        <dl>
-            <dt style="color: brown;">Number: 82 98851-6305</dt>                     
-        </dl>
+  
+    <div class="container">
+        <h1>Contato</h1>
+        {% bootstrap_messages %}
+        <form action="{% url 'contato' %}" method="post" class="form" autocomplete="off">
+           {% csrf_token %}  <!--Se não colocar dentro do formulario, ele nunca será válido (Questão de segurança)-->
+           {% bootstrap_form form %}
+           {% buttons %}              
+                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+           {% endbuttons %}
+        </form>
+    </div>    
 
-        <h2>Contact E-mail</h2>
-        <dl>
-            <dt style="color: brown;">E-mail: kemuelkesley@gmail.com</dt>
-        </dl>
-    </center>
+{% bootstrap_javascript jquery='full' %}      
 </body>
-</html>
+</html> 
