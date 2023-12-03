@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Index</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>    
+<body>
+    
+    <center>
+    <h1>Page Django Index</h1>
+
+    <img src="{% static 'images/logo.png' %}">
+
+    <h1>{{ welcome }}</h1>
+    <p>{{ begin }}</p>
+        
+        <h2>Contact Number</h2>
+        <dl>
+            <dt>Number: 82 98851-6305</dt>                     
+        </dl>
+
+        <h2>Contact E-mail</h2>
+        <dl>
+            <dt>E-mail: kemuelkesley@gmail.com</dt>
+        </dl>
+    </center>
+</body>
+</html>
