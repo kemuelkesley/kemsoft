@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -23,9 +25,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'm$@ei6!t1x(0(11*vmxq&w3nb12=xv&ynki7h-jqb%ew^o1qez'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# DEBUG com valor True = modo desenvolvimento
+# DEBUG com valor False = modo produção
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['*']
+=======
+ALLOWED_HOSTS = ['*'] # https://kemsoft-kem.herokuapp.com/
+>>>>>>> 9c92ed488404521468c1f02609c30e47dd369506
 
 
 # Application definition
@@ -38,11 +46,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'escola',
+=======
+    'bootstrap4',
+    'escola',
+    
+>>>>>>> 9c92ed488404521468c1f02609c30e47dd369506
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,7 +93,8 @@ WSGI_APPLICATION = 'kemsoft.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -119,7 +135,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # usado durante o desenvolvimento.
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # usando durante a produção.
+
+
+LOGOUT_REDIRECT_URL = 'index'
 
 
 
@@ -127,16 +147,16 @@ STATIC_URL = '/static/'
 
 JAZZMIN_SETTINGS = {
     
-    "site_logo": "book/img/logo.png",
+   
    
     # Tela dando boas vindas e colocando a mensagem que desejar.
-    "welcome_sign": "Bem vindo a KemSoft",
+    "welcome_sign": "Bem vindo a KemSoftware",
     
     # Tela de boas vindas do Django
-    "site_header": "Administração KemSof",
+    "site_header": "KemSofware",
 
     # Tela do rodapé da aplicação informando o copyrigth.
-    "copyright": "KemSoft Ltd",
+    "copyright": "KemSoftware Ltd",
 
 
     # Testando Menus
@@ -144,7 +164,8 @@ JAZZMIN_SETTINGS = {
     "topmenu_links": [        
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Suporte", "url": "https://www.myia.com.br/contactus", "new_window": True},       
+        #{"name": "Suporte", "url": "Whatsapp 82 98851-6305", "new_window": True},      
+         {"name": "Contact/Whatsapp 82 98851-6305", "url": "", "new_window": True},  
     ],
 
     
@@ -161,10 +182,10 @@ JAZZMIN_SETTINGS = {
 
     # Colocar Menu no canto superior direito para o usuario.
     "usermenu_links": [
-        {"name": "Suporte Contato", "url": "https://www.myia.com.br/contactus", "new_window": True},
-        {"name": "instagram", "url": "https://www.instagram.com/kemuelkesley/", "new_window": True},
-        {"model": "auth.user"}
-         
+        {"model": "auth.user"},
+        {"name": "Suporte Contato", "url": "https://www.instagram.com/kemuelkesley/", "new_window": True},
+        {"name": "Github", "url": "https://github.com/kemuelkesley", "new_window": True},
+        #{"model": "auth.user"},       
     ],
 
     # Mudando icones do lado esquerdo
@@ -174,7 +195,7 @@ JAZZMIN_SETTINGS = {
         "auth.Group": "fas fa-users",
         
     },
-
+    
 
 }
 
@@ -182,5 +203,11 @@ JAZZMIN_SETTINGS = {
 
 JAZZMIN_UI_TWEAKS = {
     
-    "theme": "simplex",
+    #"theme": "simplex",
+    #"dark_mode_theme": "darkly",
+    "theme":"lumen",
 }
+
+# Ativar os botões de edição no canto superior direito da tela.
+
+JAZZMIN_SETTINGS["show_ui_builder"] = True
